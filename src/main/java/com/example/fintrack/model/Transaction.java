@@ -16,6 +16,9 @@ public class Transaction {
     private BigDecimal amount;
     private LocalDate date;
 
+    @Column(nullable = false)
+    private String currency = "BGN";
+
     public Transaction() {}
     public Transaction(String description, BigDecimal amount, LocalDate date) {
         this.description = description;
@@ -53,5 +56,13 @@ public class Transaction {
 
     public void setDate(LocalDate date) {
         this.date = date;
+    }
+
+    public String getCurrency() {
+        return currency;
+    }
+
+    public void setCurrency(String currency) {
+        this.currency = currency;
     }
 }
